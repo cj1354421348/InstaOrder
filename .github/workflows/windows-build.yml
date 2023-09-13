@@ -27,6 +27,8 @@ jobs:
       - name: Build Project
         working-directory: ./build
         run: cmake --build .
+      - name: LS
+        run: ls 
       - uses: actions/checkout@master
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.1
@@ -40,8 +42,8 @@ jobs:
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 0.01
-          name: Release0.01
+          tag_name: 0.02
+          name: Release0.02
           body: TODO New Release.
           draft: false
           prerelease: false
