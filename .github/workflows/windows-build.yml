@@ -22,10 +22,12 @@ jobs:
           arch: 'win64_msvc2019_64'
           install-deps: 'true'
           modules: 'qtwebengine qtwebchannel qtpositioning'
-
+      - name: LS
+        run: ls 
       - name: Configure Project
         run: qt-cmake -S . -B ./build
-
       - name: Build Project
         working-directory: ./build
         run: cmake --build .
+      - name: LS
+        run: ls 
