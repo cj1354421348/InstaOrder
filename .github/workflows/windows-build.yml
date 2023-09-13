@@ -29,7 +29,6 @@ jobs:
         run: cmake --build .
       - name: LS
         run: ls 
-      - uses: actions/checkout@master
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.1
         with:
@@ -42,8 +41,8 @@ jobs:
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 0.03
-          name: Release0.03
+          tag_name: 0.04
+          name: Release0.04
           body: TODO New Release.
           draft: false
           prerelease: false
