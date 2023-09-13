@@ -23,9 +23,9 @@ jobs:
           install-deps: 'true'
           modules: 'qtwebengine qtwebchannel qtpositioning' 
       - name: Configure Project
-        run: qt-cmake -S . -B ./ccbuild11
+        run: qt-cmake -S . -B ./build
       - name: Build Project
-        working-directory: ./ccbuild11
+        working-directory: ./build
         run: cmake --build .
       - name: LS
         run: ls 
@@ -33,6 +33,7 @@ jobs:
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
+          directory: './build'
           filename: 'release.zip'
       - name: LS
         run: ls 
@@ -41,8 +42,8 @@ jobs:
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 0.04
-          name: Release0.04
+          tag_name: 0.05
+          name: Release0.05
           body: TODO New Release.
           draft: false
           prerelease: false
