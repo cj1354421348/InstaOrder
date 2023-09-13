@@ -21,16 +21,12 @@ jobs:
           target: 'desktop'
           arch: 'win64_msvc2019_64'
           install-deps: 'true'
-          modules: 'qtwebengine qtwebchannel qtpositioning'
-      - name: LS
-        run: ls 
-      - name: Configure Project
-        run: qt-cmake -S . -B ./build
-      - name: Build Project
-        working-directory: ./build
-        run: cmake --build .
-      - name: LS
-        run: ls 
+          modules: 'qtwebengine qtwebchannel qtpositioning' 
+      # - name: Configure Project
+      #   run: qt-cmake -S . -B ./build
+      # - name: Build Project
+      #   working-directory: ./build
+      #   run: cmake --build .
       - uses: actions/checkout@master
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.1
@@ -38,6 +34,8 @@ jobs:
           type: 'zip'
           filename: 'release.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
+      - name: LS
+        run: ls 
       # - name: Zip the Build
       #   run: zip -r test ./build/ 
       # - name: Create Release and Upload Release Asset
