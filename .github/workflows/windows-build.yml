@@ -22,7 +22,7 @@ jobs:
           arch: 'win64_msvc2019_64'
           install-deps: 'true'
           modules: 'qtwebengine qtwebchannel qtpositioning'
-          github_token: ${{ secrets.GITHUB_TOKEN }} # 一个默认的变量，用来实现往 Release 中添加文件
+          github_token: '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' # 一个默认的变量，用来实现往 Release 中添加文件
 
       - name: Configure Project
         run: qt-cmake -S . -B ./build
