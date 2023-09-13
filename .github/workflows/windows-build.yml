@@ -42,8 +42,8 @@ jobs:
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 0.05
-          name: Release0.05
+          tag_name: 0.06
+          name: Release0.06
           body: TODO New Release.
           draft: false
           prerelease: false
