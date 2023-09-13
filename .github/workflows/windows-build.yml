@@ -22,30 +22,31 @@ jobs:
           arch: 'win64_msvc2019_64'
           install-deps: 'true'
           modules: 'qtwebengine qtwebchannel qtpositioning' 
-      # - name: Configure Project
-      #   run: qt-cmake -S . -B ./build
-      # - name: Build Project
-      #   working-directory: ./build
-      #   run: cmake --build .
+      - name: Configure Project
+        run: qt-cmake -S . -B ./build
+      - name: Build Project
+        working-directory: ./build
+        run: cmake --build .
       - uses: actions/checkout@master
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
+          directory: './build'
           filename: 'release.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: LS
         run: ls 
       # - name: Zip the Build
       #   run: zip -r test ./build/ 
-      # - name: Create Release and Upload Release Asset
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     tag_name: 0.01
-      #     name: Release0.01
-      #     body: TODO New Release.
-      #     draft: false
-      #     prerelease: false
-      #     files: |
-      #       test.zip
-      #       LICENSE 
+      - name: Create Release and Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 0.01
+          name: Release0.01
+          body: TODO New Release.
+          draft: false
+          prerelease: false
+          files: |
+            release.zip
+            LICENSE 
