@@ -32,7 +32,7 @@ jobs:
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
-          directory: './build'
+          directory: 'build'
           filename: 'release.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: LS
