@@ -48,5 +48,5 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            release.zip
+            ./build/release.zip
             LICENSE 
